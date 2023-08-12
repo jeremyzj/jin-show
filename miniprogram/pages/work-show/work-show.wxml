@@ -1,0 +1,36 @@
+<View style="height:{{screenInfo.statusBarHeight}}px;"></View>
+<View class="nav-bar">
+  <Text class="nav-title">作品展示{{screenInfo.windowHeight - screenInfo.statusBarHeight -44- 90}}  {{screenInfo.safeArea.height - screenInfo.statusBarHeight}}</Text>
+</View>
+<view class="container">
+    <scroll-view 
+        type="list" 
+        class="categorys-list"  
+        scroll-x="true"
+        scroll-with-animation
+			  scroll-into-view="{{intoView}}"
+			  scroll-into-view-alignment="center"
+        >
+          <block wx:for="{{worksCategorys}}" wx:key="id">
+            <view id="category-{{index}}" class="category-item">
+              <text bindtap="chooseVipCategory" data-id="{{index}}" class="category-name {{selected === index ? 'selected' : ''}}">{{item.name}}</text>
+            </view>
+          </block>
+        </scroll-view>
+		<scroll-view class="work-list" style="height: {{screenInfo.windowHeight - screenInfo.statusBarHeight - 112}}px;" scroll-y="true">
+			<block wx:for="{{worksData}}" wx:key="id">
+				<view class="work">
+					<video
+           class="work-url"
+					 fade-in
+           controls
+           object-fit="fill"
+					 src="{{item.url}}"
+					/>
+					<view class="work-title">
+						<text>{{item.title}}</text>
+					</view>
+				</view>
+			</block>
+		</scroll-view>
+</view>
