@@ -12,14 +12,6 @@
   },
   "sitemapLocation": "sitemap.json",
   "style": "v2",
-  "renderer": "skyline",
-  "lazyCodeLoading": "requiredComponents",
-  "rendererOptions": {
-    "skyline": {
-      "disableABTest": true,
-      "defaultDisplayBlock": false
-    }
-  },
   "tabBar": {
     "color": "#080F19",
     "selectedColor": "#080F19",

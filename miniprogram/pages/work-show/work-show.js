@@ -9,7 +9,9 @@ Page({
     worksData: getWorksList(3),
     intoView: '',
     selected: 0,
-    screenInfo: wx.getWindowInfo()
+    screenInfo: wx.getWindowInfo(),
+    videoHeight: getVideoHeight(),
+    scrollHeight: getScrollHeight()
   },
 
   /**
@@ -93,7 +95,7 @@ function getCategorys() {
 
 function getWorksList(num) {
   const titles = [
-    '酷跑春天·跑鞋新品发布会',
+    '这里可以填写优秀作品的视频标题',
     '直接全球气候变化',
     '幻想奇遇·3D音乐节'
   ]
@@ -102,8 +104,19 @@ function getWorksList(num) {
     works.push({
       id,
       title: titles[(id % titles.length)],
-      url: 'http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400'
+      url: 'https://636c-cloud1-8gnde99f1c63f90f-1319765993.tcb.qcloud.la/F1258B99-3F5E-40F5-8B15-4B59CB1D5D02.MOV?sign=50a00ddeb88c68a4e6683df4c016e3b1&t=1691904373'
     })
   }
   return works
+}
+
+function getVideoHeight() {
+  let screenInfo = wx.getWindowInfo()
+  let height = screenInfo.windowWidth * (9 / 16)
+  return height
+}
+
+function getScrollHeight() {
+  let screenInfo = wx.getWindowInfo()
+  return screenInfo.windowHeight - 67
 }

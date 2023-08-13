@@ -60,7 +60,6 @@
 
 .work-url {
   width: 100%;
-  height: 230px;
   background-color: #fff;
 }
 

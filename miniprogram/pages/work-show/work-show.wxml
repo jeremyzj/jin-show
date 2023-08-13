@@ -1,7 +1,3 @@
-<View style="height:{{screenInfo.statusBarHeight}}px;"></View>
-<View class="nav-bar">
-  <Text class="nav-title">作品展示{{screenInfo.windowHeight - screenInfo.statusBarHeight -44- 90}}  {{screenInfo.safeArea.height - screenInfo.statusBarHeight}}</Text>
-</View>
 <view class="container">
     <scroll-view 
         type="list" 
@@ -17,13 +13,17 @@
             </view>
           </block>
         </scroll-view>
-		<scroll-view class="work-list" style="height: {{screenInfo.windowHeight - screenInfo.statusBarHeight - 112}}px;" scroll-y="true">
+		<scroll-view 
+    class="work-list" 
+    style="height: {{scrollHeight}}px;" 
+    scroll-y="true">
 			<block wx:for="{{worksData}}" wx:key="id">
 				<view class="work">
 					<video
            class="work-url"
-					 fade-in
+           style="height: {{videoHeight}};"
            controls
+           poster="https://636c-cloud1-8gnde99f1c63f90f-1319765993.tcb.qcloud.la/poster.png?sign=ab6fa805f02ae28e605c6386c2f7ce5b&t=1691903131"
            object-fit="fill"
 					 src="{{item.url}}"
 					/>

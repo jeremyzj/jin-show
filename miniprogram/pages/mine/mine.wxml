@@ -1,2 +1,17 @@
-<!--pages/mine/mine.wxml-->
-<text>pages/mine/mine.wxml</text>
+<view class="container">
+   <Text class="page-title">
+      津点文化有限公司
+   </Text> 
+   <Text class="page-content">
+    津点文化是全球领先的自媒体解决方案供应商，我们的使命是将设备和人员与网络和服务连接起来，推动数字创新并帮助构建更智能的世界。我们的产品可助力实现更为便捷、高效、舒适、富裕和安全的生活。
+    </Text>
+    <Text class="help">
+      想要合作，请联系我们：
+    </Text>
+    <Text class="mobile">
+      电话：0551-12345667
+    </Text>
+    <Text class="email">
+      邮箱：help@qq.com
+    </Text>
+</view>
