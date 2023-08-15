@@ -8,7 +8,8 @@ Component({
     poster: String,
     isSelect: Boolean,
     title: String,
-    videoId: Number
+    videoId: Number,
+    videoIcon: String
   },
 
   /**
@@ -41,6 +42,6 @@ Component({
     tapImageCover(e) {
       var detail = {videoId: this.properties.videoId} // detail对象，提供给事件监听函数
       this.triggerEvent('tapVideo', detail)
-    }
+    },
   }
 })

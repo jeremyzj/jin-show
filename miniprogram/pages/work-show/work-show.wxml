@@ -10,6 +10,7 @@
       scroll-y="true">
         <block wx:for="{{worksData}}" wx:key="id">
         <WorkVideo 
+          videoIcon="{{videoIcon}}"
           bind:tapVideo="tapWorkVideo"
           videoId="{{index}}"
           id="{{index}}"

@@ -29,7 +29,6 @@ Component({
   methods: {
     chooseVipCategory(evt) {
       const id = evt.currentTarget.dataset.id
-      console.log(id)
       this.setData({
         intoView: `category-${id}`,
         selected: parseInt(id, 10)
@@ -44,6 +43,9 @@ Component({
       wx.cloud.callFunction({
         // 要调用的云函数名称
         name: 'getWorkCategory',
+        data: {
+          type: 'category'
+        }
       }).then(res => {
         const list = res.result.data
         const categorys = list.map((value, id) => ({

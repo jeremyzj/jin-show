@@ -33,7 +33,7 @@
       style="width: {{screenWidth}}px; height: {{videoHeight}}px;">
       <image 
         class="video-btn" 
-        src="cloud://cloud1-8gnde99f1c63f90f.636c-cloud1-8gnde99f1c63f90f-1319765993/video3.png" />
+        src="{{videoIcon}}" />
     </View>
   </block>
 </view>

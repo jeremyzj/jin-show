@@ -5,12 +5,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-    worksCategorys: getCategorys(),
     worksData: getWorksList(3),
     intoView: '',
     selected: 0,
     selectedVideo: -1,
-    scrollHeight: getScrollHeight()
+    scrollHeight: getScrollHeight(),
+    videoIcon: ''
+  },
+
+  onLoad: function(options) {
+    this.getVideoIcon()
   },
 
   chooseVipCategory(evt) {
@@ -33,7 +37,24 @@ Page({
     this.setData({
       selected: categoryId
     })
-  }
+  },
+
+  getVideoIcon() {
+    wx.cloud.callFunction({
+      // 要调用的云函数名称
+      name: 'getWorkCategory',
+      data: {
+        type: 'videoIcon'
+      }
+    }).then(res => {
+      const result = res.result
+      this.setData({
+        videoIcon: result
+      })
+    }).catch(err => {
+      console.error(err)
+    })
+  },
 })
 
 function getWorksList(num) {
