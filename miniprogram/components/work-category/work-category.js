@@ -11,9 +11,16 @@ Component({
    * 组件的初始数据
    */
   data: {
-    worksCategorys: getCategorys(),
+    worksCategorys: [],
     intoView: '',
     selected: 0
+  },
+
+  lifetimes: {
+    // 生命周期函数，可以为函数，或一个在methods段中定义的方法名
+    attached: function () { 
+      this.getCategorys()
+    },
   },
 
   /**
@@ -27,20 +34,26 @@ Component({
         selected: parseInt(id, 10)
       })
     },
+
+    getCategorys() {
+      wx.cloud.callFunction({
+        // 要调用的云函数名称
+        name: 'getWorkCategory',
+      }).then(res => {
+        const list = res.result.data
+        const categorys = list.map((value, id) => ({
+          id,
+          name: value.title,
+          width: parseFloat(value.width)
+        }))
+        this.setData({
+          worksCategorys: categorys
+        })
+      }).catch(err => {
+        console.error(err)
+      })
+    },
   },
 })
 
 
-function getCategorys() {
-  let expCategorys = [
-    '优秀作品',
-    '政务视频',
-    '婚礼视频',
-    '创意视频'
-  ]
-  expCategorys = expCategorys.map((name, id) => ({
-    id,
-    name
-  }))
-  return expCategorys
-}

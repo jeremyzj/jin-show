@@ -1,6 +1,6 @@
 <view class="container">
     <WorkCategory />
-		<scroll-view 
+		<!-- <scroll-view 
     class="work-list" 
     style="height: {{scrollHeight}}px;" 
     scroll-y="true">
@@ -19,5 +19,5 @@
 					</view>
 				</view>
 			</block>
-		</scroll-view>
+		</scroll-view> -->
 </view>
