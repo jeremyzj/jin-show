@@ -1,3 +1,6 @@
 {
-  "usingComponents": {"WorkCategory": "../../components/work-category/work-category"}
+  "usingComponents": {
+    "WorkCategory": "../../components/work-category/work-category",
+    "WorkVideo": "../../components/work-video/work-video"
+  }
 }

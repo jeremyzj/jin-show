@@ -1,0 +1,39 @@
+
+<view class="work" id="{{videoId}}">
+  <block wx:if="{{isSelect==true}}">
+    <View
+      class="work-url" 
+      style="height: {{videoHeight}}px;"
+    >
+    <video 
+      class="work-url" 
+      style="height: {{videoHeight}}px;"
+      id="video-{{videoId}}" 
+      src="{{url}}" 
+      autoplay="true"
+    />
+    </View>
+    <view class="work-title">
+      <text>{{title}}</text>
+    </view>
+  </block>
+  <block wx:if="{{isSelect==false}}">
+    <image 
+      src="{{poster}}"
+      class="work-url" 
+      style="height: {{videoHeight}}px;"
+      id="image-{{videoId}}"
+    />
+    <view class="work-title">
+      <text>{{title}}</text>
+    </view>
+    <View
+      bindtap="tapImageCover"
+      class="video-cover" 
+      style="width: {{screenWidth}}px; height: {{videoHeight}}px;">
+      <image 
+        class="video-btn" 
+        src="cloud://cloud1-8gnde99f1c63f90f.636c-cloud1-8gnde99f1c63f90f-1319765993/video3.png" />
+    </View>
+  </block>
+</view>
