@@ -1,0 +1,16 @@
+<!--components/work-category/work-category.wxml-->
+<scroll-view 
+  type="list" 
+  class="categorys-list"  
+  scroll-x="true"
+  enable-flex
+  scroll-with-animation
+  scroll-into-view="{{intoView}}"
+  scroll-into-view-alignment="center"
+  >
+  <block wx:for="{{worksCategorys}}" wx:key="id">
+    <view id="category-{{index}}" class="category-item">
+      <text bindtap="chooseVipCategory" data-id="{{index}}" class="category-name {{selected === index ? 'selected' : ''}}">{{item.name}}</text>
+    </view>
+  </block>
+</scroll-view>
