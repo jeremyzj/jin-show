@@ -1,20 +1,24 @@
 <view class="container">
-    <WorkCategory />
-		<scroll-view 
-    class="work-list" 
-    style="height: {{scrollHeight}}px;" 
-    enable-flex="true"
-    scroll-y="true">
-			<block wx:for="{{worksData}}" wx:key="id">
-      <WorkVideo 
-        bind:tapVideo="tapWorkVideo"
-        videoId="{{index}}"
-        id="{{index}}"
-        isSelect="{{index==selectedVideo}}"
-        poster="https://636c-cloud1-8gnde99f1c63f90f-1319765993.tcb.qcloud.la/poster.png?sign=ab6fa805f02ae28e605c6386c2f7ce5b&t=1691903131"
-        title="{{item.title}}"
-        url="{{item.url}}"
-      ></WorkVideo>
-			</block>
-		</scroll-view>
+    <WorkCategory 
+      bind:tapCategory="tapWorkCategory"
+    />
+    <block wx:if="{{selected==0}}">
+      <scroll-view 
+      class="work-list" 
+      style="height: {{scrollHeight}}px;" 
+      enable-flex="true"
+      scroll-y="true">
+        <block wx:for="{{worksData}}" wx:key="id">
+        <WorkVideo 
+          bind:tapVideo="tapWorkVideo"
+          videoId="{{index}}"
+          id="{{index}}"
+          isSelect="{{index==selectedVideo}}"
+          poster="https://636c-cloud1-8gnde99f1c63f90f-1319765993.tcb.qcloud.la/poster.png?sign=ab6fa805f02ae28e605c6386c2f7ce5b&t=1691903131"
+          title="{{item.title}}"
+          url="{{item.url}}"
+        ></WorkVideo>
+        </block>
+      </scroll-view>
+    </block>
 </view>

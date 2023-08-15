@@ -29,10 +29,15 @@ Component({
   methods: {
     chooseVipCategory(evt) {
       const id = evt.currentTarget.dataset.id
+      console.log(id)
       this.setData({
         intoView: `category-${id}`,
         selected: parseInt(id, 10)
       })
+      const detail = {
+        categoryId: id
+      }
+      this.triggerEvent('tapCategory', detail)
     },
 
     getCategorys() {

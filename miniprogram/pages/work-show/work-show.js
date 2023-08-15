@@ -26,22 +26,15 @@ Page({
     this.setData({
       selectedVideo: videoId
     })
+  },
+
+  tapWorkCategory(e) {
+    const {categoryId} = e.detail
+    this.setData({
+      selected: categoryId
+    })
   }
 })
-
-function getCategorys() {
-  let expCategorys = [
-    '优秀作品',
-    '政务视频',
-    '婚礼视频',
-    '创意视频'
-  ]
-  expCategorys = expCategorys.map((name, id) => ({
-    id,
-    name
-  }))
-  return expCategorys
-}
 
 function getWorksList(num) {
   const titles = [

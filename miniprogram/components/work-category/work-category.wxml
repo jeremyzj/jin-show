@@ -10,9 +10,14 @@
   scroll-into-view-alignment="center"
   >
   <block wx:for="{{worksCategorys}}" wx:key="id">
-    <view id="category-{{index}}" class="category-item" style="width: {{item.width}}px; ">
+    <view 
+      id="category-{{index}}" 
+      class="category-item" 
+      style="width: {{item.width}}px; "
+      data-id="{{index}}" bindtap="chooseVipCategory" 
+      >
       <View id="inview-{{index}}" style="width: 100%; height: 100%; align-items: center; display: flex; flex-direction: column;">
-        <text bindtap="chooseVipCategory" data-id="{{index}}" class="category-name {{selected === index ? 'selected' : ''}}">{{item.name}}</text>
+        <text class="category-name {{selected === index ? 'selected' : ''}}">{{item.name}}</text>
       <View  wx:if="{{selected == index}}" id="line={{index}}" class="line" />
       </View>
     </view>
