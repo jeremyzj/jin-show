@@ -17,6 +17,8 @@
   margin: 8px 0;
   padding: 0 5px;
   font-size: 14px;
+  color: #333333;
+  font-weight: 500;
 }
 
 .video-cover {

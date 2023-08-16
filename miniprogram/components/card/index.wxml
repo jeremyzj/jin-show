@@ -1,0 +1,13 @@
+<view class="card">
+  <image
+    mode="widthFix"
+    class="card-icon"
+    src="{{icon}}"
+  />
+  <view class="card-title">
+    <text>{{title}}</text>
+  </view>
+  <view class="card-comment">
+    <text>3万+评价</text>
+  </view>
+</view>

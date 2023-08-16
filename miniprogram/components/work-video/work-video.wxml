@@ -3,11 +3,9 @@
   <block wx:if="{{isSelect==true}}">
     <View
       class="work-url" 
-      style="height: {{videoHeight}}px;"
     >
     <video 
       class="work-url" 
-      style="height: {{videoHeight}}px;"
       id="video-{{videoId}}" 
       src="{{url}}" 
       autoplay="true"
@@ -21,7 +19,7 @@
     <image 
       src="{{poster}}"
       class="work-url" 
-      style="height: {{videoHeight}}px;"
+      mode="widthFix"
       id="image-{{videoId}}"
     />
     <view class="work-title">

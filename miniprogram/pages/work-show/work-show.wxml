@@ -6,8 +6,10 @@
       <scroll-view 
       class="work-list" 
       style="height: {{scrollHeight}}px;" 
+      show-scrollbar="{{false}}"
       enable-flex="true"
       scroll-y="true">
+      <grid-view cross-axis-gap="6" cross-axis-count="1" type="masonry">
         <block wx:for="{{worksData}}" wx:key="id">
         <WorkVideo 
           videoIcon="{{videoIcon}}"
@@ -20,6 +22,7 @@
           url="{{item.url}}"
         ></WorkVideo>
         </block>
+      </grid-view>
       </scroll-view>
     </block>
     <block wx:if="{{selected==2}}">
@@ -29,22 +32,17 @@
       enable-flex="true"
       scroll-y="true"
       type="custom"
+      show-scrollbar="{{false}}"
       >
       <grid-view cross-axis-gap="6" cross-axis-count="2" type="masonry">
         <block wx:for="{{goods}}" wx:key="id">
-          <view class="good">
-          <image
-					 mode="widthFix"
-					 class="good-icon"
-					 src="{{item.icon}}"
-					/>
-					<view class="good-title">
-						<text>{{item.title}}</text>
-					</view>
-					<view class="good-comment">
-						<text>3万+评价</text>
-					</view>
-				</view>
+        <View>
+          <Card 
+            icon="{{item.icon}}"
+            title="{{item.title}}"
+            index="card-{{index}}"
+          />
+        </View>
         </block>
         </grid-view>
       </scroll-view>

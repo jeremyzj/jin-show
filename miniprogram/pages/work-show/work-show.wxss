@@ -21,7 +21,7 @@
 }
 
 .work-list {
-  /* margin-bottom: 20px; */
+  margin-top: 10px;
 }
 
 .work {
