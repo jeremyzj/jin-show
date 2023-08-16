@@ -1,8 +1,8 @@
-<view class="container">
+<View class="container">
     <WorkCategory 
       bind:tapCategory="tapWorkCategory"
     />
-    <block wx:if="{{selected==0}}">
+    <block wx:if="{{selected==1}}">
       <scroll-view 
       class="work-list" 
       style="height: {{scrollHeight}}px;" 
@@ -22,4 +22,32 @@
         </block>
       </scroll-view>
     </block>
-</view>
+    <block wx:if="{{selected==2}}">
+      <scroll-view 
+      class="work-list" 
+      style="height: {{scrollHeight}}px;" 
+      enable-flex="true"
+      scroll-y="true"
+      type="custom"
+      >
+      <grid-view cross-axis-gap="6" cross-axis-count="2" type="masonry">
+        <block wx:for="{{goods}}" wx:key="id">
+          <view class="good">
+          <image
+					 mode="widthFix"
+					 class="good-icon"
+					 src="{{item.icon}}"
+					/>
+					<view class="good-title">
+						<text>{{item.title}}</text>
+					</view>
+					<view class="good-comment">
+						<text>3万+评价</text>
+					</view>
+				</view>
+        </block>
+        </grid-view>
+      </scroll-view>
+    </block>
+
+</View>
