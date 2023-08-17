@@ -9,6 +9,7 @@
       id="video-{{videoId}}" 
       src="{{url}}" 
       autoplay="true"
+      style="height: {{videoHeight}}; width: {{screenWidth}};"
     />
     </View>
     <view class="work-title">
@@ -19,8 +20,8 @@
     <image 
       src="{{poster}}"
       class="work-url" 
-      mode="widthFix"
       id="image-{{videoId}}"
+      style="height: {{videoHeight}}px; width: {{screenWidth}}px;"
     />
     <view class="work-title">
       <text>{{title}}</text>

@@ -6,11 +6,12 @@ Page({
    */
   data: {
     worksData: getWorksList(3),
+    microfilms: [],
     goods: getGoods(20),
     intoView: '',
     selected: 0,
     selectedVideo: -1,
-    scrollHeight: getScrollHeight(),
+    scrollHeight: 0,
     navigationHeight: 0,
     statusBarHeight: 0,
     videoIcon: '',
@@ -20,13 +21,14 @@ Page({
   onLoad: function(options) {
     this.getVideoIcon()
     this.getNavigationHeight()
+    this.getScrollHeight()
   },
 
   getNavigationHeight() {
     const screenInfo = wx.getWindowInfo()
     const { statusBarHeight } = screenInfo
     this.setData({
-      navigationHeight: statusBarHeight + 44,
+      navigationHeight: statusBarHeight + 48,
       statusBarHeight: statusBarHeight
     })
   },
@@ -56,7 +58,7 @@ Page({
   getVideoIcon() {
     wx.cloud.callFunction({
       // 要调用的云函数名称
-      name: 'getWorkCategory',
+      name: 'jdShow',
       data: {
         type: 'videoIcon'
       }
@@ -69,7 +71,57 @@ Page({
       console.error(err)
     })
   },
+
+  loadWorksData(type) {
+    return wx.cloud.callFunction({
+      // 要调用的云函数名称
+      name: 'jdShow',
+      data: {
+        type: type
+      }
+    })
+  },
+
+  loadedCategory(e) {
+    const { type } = e.detail
+    let funNameType = ''
+    if (type == WorkType.microfilm) {
+      funNameType = "microfilm"
+    } else {
+      return
+    }
+
+    this.loadWorksData(funNameType).then(res => {
+      const result = res.result.data
+      this.setData({
+        microfilms: result
+      })
+    }).catch(err => {
+      console.error(err)
+    })
+  },
+
+  getScrollHeight() {
+    let screenInfo = wx.getWindowInfo()
+    console.log(screenInfo)
+    wx.getSystemInfo({
+      success (res) {
+        console.log(res)
+      }
+    })
+    this.setData({
+      scrollHeight: screenInfo.windowHeight - 68 - screenInfo.screenTop
+    })
+  }
 })
+
+const WorkType = {
+  promotional: 1,  // 宣传片
+  microfilm: 2,    // 微电影
+  activity: 3,     // 活动跟拍
+  graduation: 4,   // 毕业季
+  wedding: 5       // 婚礼跟拍
+}
 
 function getWorksList(num) {
   const titles = [
@@ -88,16 +140,6 @@ function getWorksList(num) {
   return works
 }
 
-function getVideoHeight() {
-  let screenInfo = wx.getWindowInfo()
-  let height = screenInfo.windowWidth * (9 / 16)
-  return height
-}
-
-function getScrollHeight() {
-  let screenInfo = wx.getWindowInfo()
-  return screenInfo.windowHeight - 67
-}
 
 
 export function getGoods(num) {

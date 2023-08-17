@@ -42,7 +42,7 @@ Component({
     getCategorys() {
       wx.cloud.callFunction({
         // 要调用的云函数名称
-        name: 'getWorkCategory',
+        name: 'jdShow',
         data: {
           type: 'category'
         }
@@ -51,11 +51,19 @@ Component({
         const categorys = list.map((value, id) => ({
           id,
           name: value.title,
-          width: parseFloat(value.width)
+          width: parseFloat(value.width),
+          type: value.type
         }))
         this.setData({
           worksCategorys: categorys
         })
+        if (categorys.length > 0) {
+          const {type} = categorys[0]
+          const detail = {
+            type: type
+          }
+          this.triggerEvent('loadedCategory', detail)
+        }
       }).catch(err => {
         console.error(err)
       })

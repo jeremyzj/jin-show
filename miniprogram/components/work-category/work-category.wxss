@@ -7,6 +7,7 @@
   flex-direction: row;
   white-space: nowrap;
   justify-content: center;
+  height: 38px;
 }
 
 .category-item {

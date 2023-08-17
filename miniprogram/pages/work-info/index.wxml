@@ -1,0 +1,5 @@
+<!--pages/work-info/index.wxml-->
+<text>pages/work-info/index.wxml</text>
+{{title}}
+{{id}}
+{{type}}

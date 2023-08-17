@@ -8,7 +8,7 @@
 
 .nav-bar {
   display: flex;
-  height: 44px;
+  height: 48px;
   width: 100%;
   padding-left: 20px;
   flex-direction: row;

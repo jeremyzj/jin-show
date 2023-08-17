@@ -31,7 +31,7 @@ Component({
       const screenInfo = wx.getWindowInfo()
       const { statusBarHeight } = screenInfo
       this.setData({
-        navigationHeight: statusBarHeight + 44,
+        navigationHeight: statusBarHeight + 48,
         statusBarHeight: statusBarHeight
       })
     },

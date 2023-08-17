@@ -5,7 +5,31 @@
 <View class="container">
     <WorkCategory 
       bind:tapCategory="tapWorkCategory"
+      bind:loadedCategory="loadedCategory"
     />
+    <block wx:if="{{selected==0}}">
+      <scroll-view 
+      class="work-list" 
+      style="height: {{scrollHeight}}px;" 
+      show-scrollbar="{{false}}"
+      enable-flex="true"
+      scroll-y="true">
+      <grid-view cross-axis-gap="6" cross-axis-count="1" type="masonry">
+        <block wx:for="{{microfilms}}" wx:key="id">
+        <WorkVideo 
+          videoIcon="{{videoIcon}}"
+          bind:tapVideo="tapWorkVideo"
+          videoId="{{index}}"
+          id="{{index}}"
+          isSelect="{{index==selectedVideo}}"
+          poster="{{item.poster}}"
+          title="{{item.title}}"
+          url="{{item.video}}"
+        ></WorkVideo>
+        </block>
+      </grid-view>
+      </scroll-view>
+    </block>
     <block wx:if="{{selected==1}}">
       <scroll-view 
       class="work-list" 
@@ -40,7 +64,8 @@
       >
       <grid-view cross-axis-gap="6" cross-axis-count="2" type="masonry">
         <block wx:for="{{goods}}" wx:key="id">
-        <View>
+        <navigator url="/pages/work-info/index?id={{item.id}}&type={{selected}}&title={{item.title}}" 
+        hover-class="navigator-hover">
           <Card 
             icon="{{item.icon}}"
             title="{{item.title}}"
@@ -48,7 +73,7 @@
             isVideo="{{true}}"
             videoIcon="{{videoIcon}}"
           />
-        </View>
+        </navigator>
         </block>
         </grid-view>
       </scroll-view>
