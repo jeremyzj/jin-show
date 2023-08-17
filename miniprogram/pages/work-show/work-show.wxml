@@ -41,6 +41,8 @@
             icon="{{item.icon}}"
             title="{{item.title}}"
             index="card-{{index}}"
+            isVideo="{{true}}"
+            videoIcon="{{videoIcon}}"
           />
         </View>
         </block>

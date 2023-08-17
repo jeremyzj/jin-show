@@ -2,6 +2,8 @@
 
 .card {
   background-color: #FFF;
+  display: flex;
+  flex-direction: column;
 }
 
 .card-icon {
@@ -22,4 +24,18 @@
   color: #ccc;
   padding-left: 5px;
   margin-bottom: 10px;
+}
+
+.card-cover {
+  display: flex; 
+  justify-content: flex-end; 
+  align-items: flex-end;
+  position: absolute; 
+  top: 0px; 
+  left: 0px; 
+}
+
+.card-video-icon {
+  width: 16px; 
+  height: 16px;
 }

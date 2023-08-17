@@ -1,9 +1,20 @@
 <view class="card">
+  <View style="display: flex;">
   <image
+    bindload="imageOnload"
     mode="widthFix"
     class="card-icon"
     src="{{icon}}"
   />
+  <View
+    wx:if="{{isVideo==true}}"
+    class="card-cover"
+    style="height: {{imageHeight - 6}}px; width: {{imageWidth - 6}}px; ">
+      <image 
+        class="card-video-icon"
+        src="{{videoIcon}}" />
+    </View>
+  </View>
   <view class="card-title">
     <text>{{title}}</text>
   </view>
