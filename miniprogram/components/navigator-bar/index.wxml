@@ -1,0 +1,7 @@
+<View class="container" style="height: {{navigationHeight}}px">
+  <View style="height: {{statusBarHeight}}px;"/>
+  <View class="navigator">
+    <image class="logo-image" src="../../images/logo.png" />
+    <Text class="title">{{title}}</Text>
+  </View>
+</View>

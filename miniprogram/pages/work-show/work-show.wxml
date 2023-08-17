@@ -1,3 +1,7 @@
+<NavigatorBar 
+  title="作品展示"
+  needLogo="{{true}}"
+/>
 <View class="container">
     <WorkCategory 
       bind:tapCategory="tapWorkCategory"

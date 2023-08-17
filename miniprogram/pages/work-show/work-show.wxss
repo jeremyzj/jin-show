@@ -40,28 +40,3 @@
   padding: 0 5px;
   font-size: 14px;
 }
-
-
-.good {
-  background-color: #FFF;
-}
-
-.good-icon {
-  width: 100%;
-  border-radius: 6px;
-}
-
-.good-title {
-  width: 100%;
-  line-height: 1.4;
-  margin: 8px 0;
-  padding: 0 5px;
-  font-size: 14px;
-}
-
-.good-comment {
-  font-size: 12px;
-  color: #ccc;
-  padding-left: 5px;
-  margin-bottom: 10px;
-}

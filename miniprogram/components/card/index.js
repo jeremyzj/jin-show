@@ -24,7 +24,6 @@ Component({
    */
   methods: {
     imageOnload(event) {
-      console.log(event.detail)
       const {width, height} = event.detail
       const screenWidth = wx.getWindowInfo().screenWidth
       const imageWidth =  screenWidth / 2 - 6

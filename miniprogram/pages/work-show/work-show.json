@@ -2,6 +2,8 @@
   "usingComponents": {
     "WorkCategory": "../../components/work-category/work-category",
     "WorkVideo": "../../components/work-video/work-video",
-    "Card": "../../components/card/index"
-  }
+    "Card": "../../components/card/index",
+    "NavigatorBar": "../../components/navigator-bar/index"
+  },
+  "navigationStyle": "custom"
 }

@@ -11,12 +11,24 @@ Page({
     selected: 0,
     selectedVideo: -1,
     scrollHeight: getScrollHeight(),
+    navigationHeight: 0,
+    statusBarHeight: 0,
     videoIcon: '',
     padding: [0, 16, 0, 16],
   },
 
   onLoad: function(options) {
     this.getVideoIcon()
+    this.getNavigationHeight()
+  },
+
+  getNavigationHeight() {
+    const screenInfo = wx.getWindowInfo()
+    const { statusBarHeight } = screenInfo
+    this.setData({
+      navigationHeight: statusBarHeight + 44,
+      statusBarHeight: statusBarHeight
+    })
   },
 
   chooseVipCategory(evt) {

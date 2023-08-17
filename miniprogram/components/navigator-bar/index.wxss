@@ -1,0 +1,26 @@
+/* components/navigator-bar/index.wxss */
+.container {
+  display: flex; 
+  flex-direction: column;
+}
+
+.navigator {
+  display: flex; 
+  flex-direction: row; 
+  align-items: center; 
+  height: 44px; 
+  padding-left: 20px;
+  padding-top: 5px;
+}
+
+.logo-image {
+  height: 26px; 
+  width: 28px;
+}
+
+.title {
+  color: #333333; 
+  margin-left: 6px; 
+  font-size: 17px; 
+  font-weight: 500;
+}
