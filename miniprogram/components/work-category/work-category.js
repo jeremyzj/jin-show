@@ -33,8 +33,11 @@ Component({
         intoView: `category-${id}`,
         selected: parseInt(id, 10)
       })
+      const { worksCategorys } = this.data
+      const category = worksCategorys.filter(value => value.id == id)
       const detail = {
-        categoryId: id
+        categoryId: id,
+        type: category[0].type
       }
       this.triggerEvent('tapCategory', detail)
     },

@@ -15,5 +15,7 @@ exports.main = async (event, context) => {
       return "cloud://cloud1-8gnde99f1c63f90f.636c-cloud1-8gnde99f1c63f90f-1319765993/video5.png";
     case 'microfilm':
       return await db.collection('jd-microfilm').get()
+    case 'promotion':
+      return await db.collection('jd-promotional').get()
   }
 };
