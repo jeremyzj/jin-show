@@ -17,5 +17,13 @@ exports.main = async (event, context) => {
       return await db.collection('jd-microfilm').get()
     case 'promotion':
       return await db.collection('jd-promotional').get()
+    case 'activity':
+      return await db.collection('jd-activity').field({
+        _id: true,
+        title: true,
+        content: true,
+        isVideo: true,
+        poster: true
+      }).get()
   }
 };

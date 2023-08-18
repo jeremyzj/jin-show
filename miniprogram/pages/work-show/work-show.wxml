@@ -63,14 +63,14 @@
       show-scrollbar="{{false}}"
       >
       <grid-view cross-axis-gap="6" cross-axis-count="2" type="masonry">
-        <block wx:for="{{goods}}" wx:key="id">
+        <block wx:for="{{activities}}" wx:key="id">
         <navigator url="/pages/work-info/index?id={{item.id}}&type={{selected}}&title={{item.title}}" 
         hover-class="navigator-hover">
           <Card 
-            icon="{{item.icon}}"
+            icon="{{item.poster}}"
             title="{{item.title}}"
             index="card-{{index}}"
-            isVideo="{{true}}"
+            isVideo="{{item.isVideo}}"
             videoIcon="{{videoIcon}}"
           />
         </navigator>
