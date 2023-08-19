@@ -12,7 +12,7 @@
   <View style="height: 10px;" />
   <grid-view cross-axis-gap="6" 	main-axis-gap="10" cross-axis-count="1" type="aligned">
     <block wx:for="{{images}}" wx:key="id">
-      <navigator url="/pages/images/images?id={{id}}" 
+      <navigator url="/pages/images-info/images?id={{id}}" 
         hover-class="navigator-hover">
     	<image
         mode="widthFix"
