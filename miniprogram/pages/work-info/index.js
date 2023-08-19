@@ -14,8 +14,6 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad(options) {
-    console.log(options)
-
     wx.setNavigationBarTitle({
       title: options.title,
     })

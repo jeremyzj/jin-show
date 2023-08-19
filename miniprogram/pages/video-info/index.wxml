@@ -1,2 +1,6 @@
 <!--pages/video-info/index.wxml-->
-<text>pages/video-info/index.wxml</text>
+<video 
+  src="{{video}}" 
+  autoplay="true"
+  style="height: {{videoHeight}}px; width: 100%;"
+/>

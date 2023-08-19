@@ -64,17 +64,32 @@
       >
       <grid-view cross-axis-gap="6" cross-axis-count="2" type="masonry">
         <block wx:for="{{activities}}" wx:key="id">
-        <navigator url="/pages/work-info/index?id={{item._id}}&type={{selected}}&title={{item.title}}" 
-        hover-class="navigator-hover">
-          <Card 
-            icon="{{item.poster}}"
-            title="{{item.title}}"
-            index="card-{{index}}"
-            isVideo="{{item.isVideo}}"
-            videoIcon="{{videoIcon}}"
-            comment="{{item.content}}"
-          />
-        </navigator>
+          <block wx:if="{{item.isVideo==false}}">
+            <navigator url="/pages/work-info/index?id={{item._id}}&type={{selected}}&title={{item.title}}" 
+            hover-class="navigator-hover">
+              <Card 
+                icon="{{item.poster}}"
+                title="{{item.title}}"
+                index="card-{{index}}"
+                isVideo="{{item.isVideo}}"
+                videoIcon="{{videoIcon}}"
+                comment="{{item.content}}"
+              />
+            </navigator>
+          </block>
+          <block wx:if="{{item.isVideo==true}}">
+            <navigator url="/pages/video-info/index?id={{item._id}}&title={{item.title}}" 
+            hover-class="navigator-hover">
+              <Card 
+                icon="{{item.poster}}"
+                title="{{item.title}}"
+                index="card-{{index}}"
+                isVideo="{{item.isVideo}}"
+                videoIcon="{{videoIcon}}"
+                comment="{{item.content}}"
+              />
+            </navigator>
+          </block>
         </block>
         </grid-view>
       </scroll-view>

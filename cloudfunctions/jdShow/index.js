@@ -25,9 +25,15 @@ exports.main = async (event, context) => {
         isVideo: true,
         poster: true
       }).get()
-    case 'activityInfo':
+    case 'activityInfo': {
       const {activityId} = event
-      console.log('activityInfo', activityId)
       return await db.collection('jd-activity').doc(activityId).get()
+    }
+    case 'activityVideo': {
+      const {activityId} = event
+      return await db.collection('jd-activity').doc(activityId).field({
+        video: true
+      }).get()
+    }
   }
 };
