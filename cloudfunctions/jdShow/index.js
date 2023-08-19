@@ -25,5 +25,9 @@ exports.main = async (event, context) => {
         isVideo: true,
         poster: true
       }).get()
+    case 'activityInfo':
+      const {activityId} = event
+      console.log('activityInfo', activityId)
+      return await db.collection('jd-activity').doc(activityId).get()
   }
 };

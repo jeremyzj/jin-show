@@ -1,5 +1,25 @@
-<!--pages/work-info/index.wxml-->
-<text>pages/work-info/index.wxml</text>
-{{title}}
-{{id}}
-{{type}}
+
+  
+
+<scroll-view 
+  class="work-list" 
+  show-scrollbar="{{false}}"
+  enable-flex="true"
+  type="custom"
+  scroll-y="true">
+  <View style="margin-left: 10px; margin-right: 10px;">
+  <Text class="content">
+    {{content}}
+  </Text>
+  </View>
+  <View style="height: 10px;" />
+  <grid-view cross-axis-gap="6" 	main-axis-gap="10" cross-axis-count="1" type="aligned">
+    <block wx:for="{{images}}" wx:key="id">
+    	<image
+        mode="widthFix"
+        src="{{item.item}}"
+        style="width: 100%;"
+      />
+    </block>
+  </grid-view>
+  </scroll-view>

@@ -5,23 +5,43 @@ Page({
    * Page initial data
    */
   data: {
-    title: "",
-    id: "",
-    type: ""
+    content: "",
+    images: []
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad(options) {
-    this.setData({
-      title: options.title,
-      type: options.type,
-      id: options.id
-    })
+    console.log(options)
 
     wx.setNavigationBarTitle({
-      title: options.title
+      title: options.title,
+    })
+    this.loadActivityInfo(options.id).then(res => {
+      const {content, images} =  res.result.data
+      const imageItems = images.map((value, id) => {
+        return {
+          item: value,
+          id
+        }
+      })
+
+      this.setData({
+        content: content,
+        images: imageItems
+      })
+    })
+  },
+
+  loadActivityInfo(id) {
+    return wx.cloud.callFunction({
+      // 要调用的云函数名称
+      name: 'jdShow',
+      data: {
+        type: 'activityInfo',
+        activityId: id
+      }
     })
   },
 

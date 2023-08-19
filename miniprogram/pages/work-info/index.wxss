@@ -1,1 +1,21 @@
 /* pages/work-info/index.wxss */
+
+.work-list {
+  margin-top: 10px;
+}
+
+.content {
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #666666;
+  font-size: 14px;
+  line-height: 28px;
+}
+
+.image-item {
+  margin-top: 5px;
+}
+
+.image-view {
+
+}
