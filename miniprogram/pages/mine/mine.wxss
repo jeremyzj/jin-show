@@ -1,6 +1,6 @@
 /* pages/mine/mine.wxss */
 .container {
-  margin-top: 20px;
+  margin-top: 0px;
   display: flex;
   flex-direction: column;
   flex: 1;

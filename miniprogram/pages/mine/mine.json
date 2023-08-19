@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
-  "navigationBarTitleText": "公司介绍"
+  "usingComponents": {
+    "NavigatorBar": "../../components/navigator-bar/index"
+  },
+  "navigationStyle": "custom"
 }

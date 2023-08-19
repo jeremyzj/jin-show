@@ -1,6 +1,8 @@
 <!--pages/video-info/index.wxml-->
+<View style="height: {{screenHeight}}px; width: 100%;">
 <video 
   src="{{video}}" 
   autoplay="true"
   style="height: {{videoHeight}}px; width: 100%;"
 />
+</View>
