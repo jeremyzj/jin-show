@@ -2,7 +2,8 @@
   "pages": [
     "pages/work-show/work-show",
     "pages/mine/mine",
-    "pages/work-info/index"
+    "pages/work-info/index",
+    "pages/images/images"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

@@ -16,9 +16,6 @@
     </View>
   </View>
   <view class="card-title">
-    <text>{{title}}</text>
-  </view>
-  <view class="card-comment">
-    <text>3万+评价</text>
+    <text style="color: #666;">{{title}}</text>
   </view>
 </view>

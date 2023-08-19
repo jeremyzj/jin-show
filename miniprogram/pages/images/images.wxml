@@ -1,0 +1,24 @@
+
+<View style="background-color: #2a2a2b; height: {{screenHeight}}px;">
+<View style="height: {{swipperHeight}}px; width: 100%; ">
+<swiper
+  style="height: {{swipperHeight}}px;"
+  indicator-dots="{{true}}" 
+  autoplay="{{true}}" 
+  circular="{{true}}"
+  indicator-active-color="#FFFFFF"
+  indicator-color="#5D626D">
+  <block wx:for="{{images}}" wx:key="id">
+    <swiper-item>
+    <View style="display: flex; flex-direction: column; justify-content: center; height: {{swipperHeight - 100}}px;">
+      <image
+        mode="widthFix"
+        src="{{item.item}}"
+        style="width: 100%;"
+      />
+      </View>
+    </swiper-item>
+  </block>
+</swiper>
+</View>
+</View>

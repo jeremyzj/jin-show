@@ -6,7 +6,8 @@ Page({
    */
   data: {
     content: "",
-    images: []
+    images: [],
+    id : ""
   },
 
   /**
@@ -29,7 +30,8 @@ Page({
 
       this.setData({
         content: content,
-        images: imageItems
+        images: imageItems,
+        id: options.id
       })
     })
   },
