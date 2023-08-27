@@ -81,16 +81,37 @@ Page({
     let funNameType = ''
     if (type == WorkType.microfilm) {
       funNameType = "microfilm"
+      const { microfilms } = this.data
+      if (microfilms.length == 0) {
+        wx.showLoading({
+          title: '加载中',
+        })
+      }
     } else if (type == WorkType.promotional){
       funNameType = "promotion"
+      const { promotions } = this.data
+      if (promotions.length == 0) {
+        wx.showLoading({
+          title: '加载中',
+        })
+      }
     } else if (type == WorkType.activity) {
       funNameType = "activity"
+      const { activities } = this.data
+      if (activities.length == 0) {
+        wx.showLoading({
+          title: '加载中',
+        })
+      }
     } else {
       return
     }
 
+    
+
     this.loadWorksData(funNameType).then(res => {
       const result = res.result.data
+      wx.hideLoading()
       if (type == WorkType.microfilm) {
         this.setData({
           microfilms: result
@@ -100,7 +121,6 @@ Page({
           promotions: result
         })
       } else if (type == WorkType.activity) {
-        console.log(result)
         this.setData({
           activities: result
         })
